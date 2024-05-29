@@ -7,5 +7,5 @@ export default async function Dashboard() {
 
   if (!user || !user.id) redirect("/auth-callback?origin=dashboard");
 
-  return <div>Hello</div>;
+  return (<div className="text-center mt-4">{user?.email}</div>);
 }
