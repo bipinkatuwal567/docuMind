@@ -14,14 +14,13 @@ const Page = () => {
     onSuccess: ({ success }) => {
       console.log("success");
       if (success) {
-        
         // user is synced to db
         router.push(origin ? `/${origin}` : "/dashboard");
       }
     },
     onError: (err) => {
       console.log("Error");
-      
+
       if (err.data?.code === "UNAUTHORIZED") {
         router.push("/sign-in");
       }
