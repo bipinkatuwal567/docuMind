@@ -37,7 +37,7 @@ const Dashboard = () => {
 
       {/* User upload files */}
       {files && files.length !== 0 ? (
-        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 divide-y divide-zinc-200 ">
+        <ul className="grid mt-7 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 divide-y divide-zinc-200 ">
           {files
             .sort(
               (a, b) =>
@@ -82,13 +82,11 @@ const Dashboard = () => {
                     variant={"destructive"}
                     onClick={() => deleteFile({ id: file.id })}
                   >
-                    {
-                      currentlyDeletingFile === file.id ? (
-                        <Loader2 className="w-4 h-4 animate-spin" />
-                      ) : (
-                        <Trash className="w-4 h-4" />
-                      )
-                    }
+                    {currentlyDeletingFile === file.id ? (
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                    ) : (
+                      <Trash className="w-4 h-4" />
+                    )}
                   </Button>
                 </div>
               </li>
